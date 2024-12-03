@@ -7,7 +7,16 @@ client = weaviate.Client(
     auth_client_secret=auth_config
 )
 
+
+###### The content in weaviate DB can be viewed by passing the weaviate collection ######
+
+client.data_object.get(
+  class_name="GenAI_Industry_Solution",
+  with_vector=True
+)
+
 # GraphQL query to fetch data from GenAI_Video_Transcript class
+
 query = """
 {
   Get {
